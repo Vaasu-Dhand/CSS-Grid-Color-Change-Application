@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Grid</title>
+    <!-- Google Font Import -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+        margin: 25px 25px 25px 25px;
+        font-family: 'Roboto Condensed', sans-serif;
+      }
+
+      .wrapper {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-gap: 10px;
+      }
+
+      .box {
+        border: 2px solid rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        background-color: blanchedalmond;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .box:hover {
+          background-color:  rgba(0, 0, 0, 0.1) !important;
+          translate: rotate(90 deg);
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+    <script>
+      const boxes = document.querySelectorAll(".wrapper div");
+
+      function getRandomColor() {
+        return Math.floor(Math.random() * (255 - 10)) + 10;
+      }
+
+      boxes.forEach((box) => {
+        let color = `rgb(${getRandomColor()}, ${getRandomColor()}, ${getRandomColor()})`;
+        box.textContent = color.toString();
+        box.style.background = color;
+        box.style.textAlign = "center";
+        box.style.color = "white";
+        box.textContent = box.textContent.toUpperCase();
+      });
+
+      boxes.forEach((box) => {
+        box.addEventListener("mouseover", (e) => {
+            document.body.style.background;
+            let target = e.path[0];
+            let color = target.style.backgroundColor;
+            colorChange(color)
+        });
+      });
+
+      function colorChange(color) {
+        document.body.style.backgroundColor = color;
+      }
+    </script>
+  </body>
+</html>
